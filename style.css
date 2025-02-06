@@ -4,6 +4,12 @@ a, p, h1 {
 }
 .extra-text {
     display: none;
-    margin-left: 10px;
-    color: gray;
+    margin-left: 20px;
+    font-style: italic;
+}
+
+.expand-btn {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
 }
