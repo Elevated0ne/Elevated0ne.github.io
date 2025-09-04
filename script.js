@@ -18,8 +18,31 @@ window.addEventListener('load', function() {
         extraText.style.display = 'none';  // Hide the extra text by default
     });
 
-    const allButtons = document.querySelectorAll('.expand-btn');
-    allButtons.forEach(button => {
-        button.textContent = '[+]';  // Ensure the buttons show [+] initially
-    });
-});
+
+
+
+// Random Quote API
+async function loadQuote() {
+  document.getElementById("content").innerText = "Loading...";
+  let response = await fetch("https://api.quotable.io/random");
+  let data = await response.json();
+  document.getElementById("content").innerText = `"${data.content}" — ${data.author}`;
+}
+
+// Random Dog API
+async function loadDog() {
+  document.getElementById("content").innerText = "Loading...";
+  let response = await fetch("https://dog.ceo/api/breeds/image/random");
+  let data = await response.json();
+  document.getElementById("content").innerHTML = `<img src="${data.message}" alt="dog picture">`;
+}
+
+// Random Joke API
+async function loadJoke() {
+  document.getElementById("content").innerText = "Loading...";
+  let response = await fetch("https://official-joke-api.appspot.com/random_joke");
+  let data = await response.json();
+  document.getElementById("content").innerText = `${data.setup} — ${data.punchline}`;
+}
+
+    
