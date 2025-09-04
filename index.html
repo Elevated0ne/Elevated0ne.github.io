@@ -5,15 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Archive</title>
+    <style>
+  /* API buttons */
+  .api-buttons {
+    margin: 20px 0;
+  }
+
+  .api-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .api-buttons button:hover {
+    background: #0056b3;
+  }
+
+  /* Content area */
+  #content {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  #content img {
+    max-width: 300px;
+    border-radius: 10px;
+  }
+</style>
+
   </head>
   
   <body>
 
 
     <div id="content">Click a button to load API data</div>
-<button onclick="loadQuote()">Get Quote</button>
-<button onclick="loadDog()">Get Dog</button>
-<button onclick="loadJoke()">Get Joke</button>
+<div class="api-buttons">
+  <button onclick="loadQuote()">Get Quote</button>
+  <button onclick="loadDog()">Get Dog</button>
+  <button onclick="loadJoke()">Get Joke</button>
+</div>
+
 
    <div class="expandable-line">
     <!-- Introduction -->
