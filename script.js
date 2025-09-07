@@ -20,6 +20,19 @@ window.addEventListener('load', function() {
 
 
 
+    const allButtons = document.querySelectorAll('.expand-btn');
+
+
+    allButtons.forEach(button => {
+
+
+        button.textContent = '[+]';  // Ensure the buttons show [+] initially
+
+
+    });
+
+
+});
 
 // Random Quote API
 async function loadQuote() {
