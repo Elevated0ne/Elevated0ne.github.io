@@ -9,6 +9,10 @@
     color: blue;
     margin-left: 5px;
   }
+  /* When active, show the text */
+  .expandable-line.active .extra-text {
+    display: block;
+  }
 </style>
 
 <div class="expandable-line">
@@ -38,19 +42,18 @@
 <script>
   document.querySelectorAll(".expand-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      const extraText = btn.closest(".expandable-line").querySelector(".extra-text");
+      const container = btn.closest(".expandable-line");
+      container.classList.toggle("active");
 
-      if (extraText.style.display === "block") {
-        extraText.style.display = "none";
-        btn.textContent = "[+]"; 
-      } else {
-        extraText.style.display = "block";
+      // Update button text
+      if (container.classList.contains("active")) {
         btn.textContent = "[-]";
+      } else {
+        btn.textContent = "[+]";
       }
     });
   });
 </script>
-
 
 // Random Quote API
 async function loadQuote() {
