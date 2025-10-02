@@ -13,10 +13,26 @@
 
 <div class="expandable-line">
   <p>
-    <a href="link" target="_blank">name</a>
+    <a href="link1" target="_blank">First item</a>
     <span class="expand-btn">[+]</span>
   </p>
-  <p class="extra-text">This is the hidden text that shows up when you click [+]</p>
+  <p class="extra-text">Hidden content for the first item.</p>
+</div>
+
+<div class="expandable-line">
+  <p>
+    <a href="link2" target="_blank">Second item</a>
+    <span class="expand-btn">[+]</span>
+  </p>
+  <p class="extra-text">Hidden content for the second item.</p>
+</div>
+
+<div class="expandable-line">
+  <p>
+    <a href="link3" target="_blank">Third item</a>
+    <span class="expand-btn">[+]</span>
+  </p>
+  <p class="extra-text">Hidden content for the third item.</p>
 </div>
 
 <script>
@@ -26,10 +42,10 @@
 
       if (extraText.style.display === "block") {
         extraText.style.display = "none";
-        btn.textContent = "[+]"; // reset button text
+        btn.textContent = "[+]"; 
       } else {
         extraText.style.display = "block";
-        btn.textContent = "[-]"; // change button text when expanded
+        btn.textContent = "[-]";
       }
     });
   });
