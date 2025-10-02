@@ -1,38 +1,40 @@
-document.body.addEventListener('click', function(event) {
-    if (event.target && event.target.matches('.expand-btn')) {
-        const extraText = event.target.closest('.expandable-line').querySelector('.extra-text');
-        if (extraText.style.display === '' || extraText.style.display === 'none') {
-            extraText.style.display = 'block';
-            event.target.textContent = '[-]'; // Change the button to collapse
-        } else {
-            extraText.style.display = 'none';
-            event.target.textContent = '[+]'; // Change the button to expand
-        }
-    }
-});
+<style>
+  .extra-text {
+    display: none; /* hidden by default */
+    margin-left: 1em;
+    color: #555;
+  }
+  .expand-btn {
+    cursor: pointer;
+    color: blue;
+    margin-left: 5px;
+  }
+</style>
 
-// Initialize the state of the buttons when the page loads
-window.addEventListener('load', function() {
-    const allExtraText = document.querySelectorAll('.extra-text');
-    allExtraText.forEach(extraText => {
-        extraText.style.display = 'none';  // Hide the extra text by default
+<div class="expandable-line">
+  <p>
+    <a href="link" target="_blank">name</a>
+    <span class="expand-btn">[+]</span>
+  </p>
+  <p class="extra-text">This is the hidden text that shows up when you click [+]</p>
+</div>
+
+<script>
+  document.querySelectorAll(".expand-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const extraText = btn.closest(".expandable-line").querySelector(".extra-text");
+
+      if (extraText.style.display === "block") {
+        extraText.style.display = "none";
+        btn.textContent = "[+]"; // reset button text
+      } else {
+        extraText.style.display = "block";
+        btn.textContent = "[-]"; // change button text when expanded
+      }
     });
+  });
+</script>
 
-
-
-    const allButtons = document.querySelectorAll('.expand-btn');
-
-
-    allButtons.forEach(button => {
-
-
-        button.textContent = '[+]';  // Ensure the buttons show [+] initially
-
-
-    });
-
-
-});
 
 // Random Quote API
 async function loadQuote() {
