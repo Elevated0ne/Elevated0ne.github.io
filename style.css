@@ -18,16 +18,18 @@
 .expandable-line.open .extra-text {
     display: block;
 }
-.expandable-line p {
+.expandable-line {
     margin: 0;
 }
 
 .expandable-line p {
     margin: 0;
     padding: 0;
+    line-height: 1;     /* match link spacing */
 }
 
 .extra-text {
     display: none;
     margin-left: 20px;
+    margin-bottom: 0;
 }
