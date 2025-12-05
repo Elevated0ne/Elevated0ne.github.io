@@ -18,8 +18,13 @@
 .expandable-line.open .extra-text {
     display: block;
 }
-p {
+.expandable-line p {
     margin: 0;
-    padding: 0;
+}
+
+.extra-text {
+    display: none;
+    margin-left: 20px;
+    margin-top: 5px;
 }
 
