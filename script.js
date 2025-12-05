@@ -55,28 +55,24 @@
   });
 </script>
 
-// Random Quote API
-async function loadQuote() {
-  document.getElementById("content").innerText = "Loading...";
-  let response = await fetch("https://api.quotable.io/random");
-  let data = await response.json();
-  document.getElementById("content").innerText = `"${data.content}" — ${data.author}`;
+    .expandable-line {
+    margin-bottom: 10px;
 }
 
-// Random Dog API
-async function loadDog() {
-  document.getElementById("content").innerText = "Loading...";
-  let response = await fetch("https://dog.ceo/api/breeds/image/random");
-  let data = await response.json();
-  document.getElementById("content").innerHTML = `<img src="${data.message}" alt="dog picture">`;
+/* Hide the extra text by default */
+.extra-text {
+    display: none;
+    margin-left: 20px;
 }
 
-// Random Joke API
-async function loadJoke() {
-  document.getElementById("content").innerText = "Loading...";
-  let response = await fetch("https://official-joke-api.appspot.com/random_joke");
-  let data = await response.json();
-  document.getElementById("content").innerText = `${data.setup} — ${data.punchline}`;
+/* Cursor hint for the [+] */
+.expand-btn {
+    cursor: pointer;
+    margin-left: 8px;
+    color: blue;
 }
 
-    
+.expandable-line.open .extra-text {
+    display: block;
+}
+
